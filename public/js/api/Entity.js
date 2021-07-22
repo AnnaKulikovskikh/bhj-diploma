@@ -6,10 +6,15 @@ class Entity {
   /**
    * Запрашивает с сервера список данных.
    * Это могут быть счета или доходы/расходы
-   * (в зависимости от того, что наследуется от Entity)
    * */
   static list(data, callback){
-
+    createRequest({
+      url,
+      data,
+      responseType: 'json',
+      method: 'GET',
+      callback
+    });
   }
 
   /**
@@ -18,7 +23,13 @@ class Entity {
    * что наследуется от Entity)
    * */
   static create(data, callback) {
-
+    createRequest( {
+      url,
+      data,
+      responseType: 'json',
+      method: 'PUT',
+      callback
+      });
   }
 
   /**
@@ -26,6 +37,13 @@ class Entity {
    * (в зависимости от того, что наследуется от Entity)
    * */
   static remove(data, callback ) {
+    createRequest( {
+      url,
+      data,
+      responseType: 'json',
+      method: 'DELETE',
+      callback
+    });
 
   }
 }

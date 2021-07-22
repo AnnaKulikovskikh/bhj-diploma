@@ -14,6 +14,14 @@ class AccountsWidget {
    * необходимо выкинуть ошибку.
    * */
   constructor( element ) {
+    try {
+      element;
+      this.element = element;
+      this.registerEvents();
+      this.update();
+    } catch {
+      throw new Error ('Не передан элемент!')
+    }
 
   }
 
