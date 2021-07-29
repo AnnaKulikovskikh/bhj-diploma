@@ -13,8 +13,7 @@ class LoginForm extends AsyncForm {
     User.login(data, callback);
     if (User.login.callback.sucess) {
       App.setState('user-logged');
-      let obj = App.getModal(this.element);
-      obj.Modal.close();
+      App.getModal('login').close();
     }  
   }
 }

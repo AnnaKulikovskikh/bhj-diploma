@@ -33,7 +33,10 @@ class AccountsWidget {
    * вызывает AccountsWidget.onSelectAccount()
    * */
   registerEvents() {
-
+    const btn = document.querySelector('.create-account');
+    btn.onclick = function(){
+      App.getModal(this.element);
+    }
   }
 
   /**

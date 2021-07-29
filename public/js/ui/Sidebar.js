@@ -44,7 +44,7 @@ class Sidebar {
           App.getModal('register').open();
         }if (this.classList.contains('menu-item_logout')) {
           User.logout(callback);
-          if (callback.response.succes) {
+          if (callback.response) {
             App.setState( 'init' );
           } 
         }

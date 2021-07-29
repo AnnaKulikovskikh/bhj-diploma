@@ -13,14 +13,11 @@ class AsyncForm {
    * через registerEvents()
    * */
   constructor(element) {
-    try {
-      element;
-      this.element = element;
-      this.registerEvents();
-    } catch {
-      throw new Error ('Не передан элемент!')
+    if (!element) {
+      throw new Error("Не передан элемент!");
     }
-
+    this.element = element;
+    this.registerEvents();
   }
 
   /**
@@ -42,7 +39,7 @@ class AsyncForm {
    * }
    * */
   getData() {
-    const form = this.element.getElementsById( 'new-account-form' );
+    const form = this.element;
     const formData = new FormData(form);
     const entries = [...formData.entries()];
     let result = new Object();
