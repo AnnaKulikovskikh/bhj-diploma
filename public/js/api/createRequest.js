@@ -7,7 +7,7 @@ const createRequest = (options = {}) => {
     const xhr = new XMLHttpRequest();
     try {
         if (method == 'GET') {
-            //xhr.open(method,`${options.url}?email=${options.data.email}?password=${options.data.password}`);
+            //xhr.open(method,`${options.url}?email=${options.data.email}&password=${options.data.password}`);
             const datum = options.url;
             for (key in options.data) {
                 datum += `?${key}=${options.data[key]}`;
@@ -25,10 +25,16 @@ const createRequest = (options = {}) => {
             xhr.send(formData);
         }
     } catch (e) {
-        options.callback.err = e;
+        options.callback.err = 'error';
     }
 
     xhr.onload = () => {
-        options.callback.response = xhr.response;
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                options.callback.response = xhr.response;
+            } else {
+                options.callback.err = 'error';
+            }
+        }
     };
 }
