@@ -25,16 +25,10 @@ const createRequest = (options = {}) => {
             xhr.send(formData);
         }
     } catch (e) {
-        options.callback.err = 'error';
+        options.callback('error');
     }
 
     xhr.onload = () => {
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4) {
-                options.callback.response = xhr.response;
-            } else {
-                options.callback.err = 'error';
-            }
-        }
-    };
+        options.callback(null, xhr.response);
+    }
 }

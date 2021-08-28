@@ -3,6 +3,7 @@
  * Имеет свойство URL, равно пустой строке.
  * */
 class Entity {
+  static url = '';
   /**
    * Запрашивает с сервера список данных.
    * Это могут быть счета или доходы/расходы
@@ -13,7 +14,7 @@ class Entity {
       data,
       responseType: 'json',
       method: 'GET',
-      callback
+      callback,
     });
   }
 
@@ -28,7 +29,7 @@ class Entity {
       data,
       responseType: 'json',
       method: 'PUT',
-      callback
+      callback,
       });
   }
 
@@ -42,7 +43,7 @@ class Entity {
       data,
       responseType: 'json',
       method: 'DELETE',
-      callback
+      callback,
     });
 
   }
