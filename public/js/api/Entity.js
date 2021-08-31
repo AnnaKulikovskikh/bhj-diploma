@@ -12,9 +12,10 @@ class Entity {
     createRequest({
       url,
       data,
-      responseType: 'json',
       method: 'GET',
-      callback,
+      callback: (err, response) => {
+        callback(err, response);
+      }
     });
   }
 
@@ -27,9 +28,10 @@ class Entity {
     createRequest( {
       url,
       data,
-      responseType: 'json',
       method: 'PUT',
-      callback,
+      callback: (err, response) => {
+        callback(err, response);
+      }
       });
   }
 
@@ -41,9 +43,10 @@ class Entity {
     createRequest( {
       url,
       data,
-      responseType: 'json',
       method: 'DELETE',
-      callback,
+      callback: (err, response) => {
+        callback(err, response);
+      }
     });
 
   }

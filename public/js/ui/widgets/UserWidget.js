@@ -30,7 +30,6 @@ class UserWidget {
   update(){
     if (User.current()) {
       let userName = document.querySelector('.user-name');
-      console.log(UuserName);
       userName.value = User.current();
     }
   }  

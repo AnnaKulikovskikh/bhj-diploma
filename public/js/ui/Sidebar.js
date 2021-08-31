@@ -43,13 +43,15 @@ class Sidebar {
         if (this.classList.contains('menu-item_register')) {
           App.getModal('register').open();
         }if (this.classList.contains('menu-item_logout')) {
-          User.logout(callback);
-          if (callback.response) {
-            App.setState( 'init' );
-          } 
-        }
+          User.logout(User.current(), (err, response) => {
+            if (err === null) {
+              App.setState( 'init');
+            } else {
+              console.log(err);
+            }
+          });  
+        } 
       });
     });
-
   }
 }

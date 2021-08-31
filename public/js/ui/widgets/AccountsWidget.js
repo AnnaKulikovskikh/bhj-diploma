@@ -14,15 +14,12 @@ class AccountsWidget {
    * необходимо выкинуть ошибку.
    * */
   constructor( element ) {
-    try {
-      element;
-      this.element = element;
-      this.registerEvents();
-      this.update();
-    } catch {
-      throw new Error ('Не передан элемент!')
-    }
-
+    if (!element) {
+      throw new Error("Не передан элемент!");
+     }
+    this.element = element;
+    this.registerEvents();
+    this.update();
   }
 
   /**
@@ -37,6 +34,10 @@ class AccountsWidget {
     btn.onclick = function(){
       App.getModal(this.element);
     }
+    const accounts = document.querySelectorAll('.account');
+    accounts.forEach(el => {el.addEventListener('click', event => {
+      this.onSelectAccount(elem);
+    })})
   }
 
   /**
@@ -50,6 +51,9 @@ class AccountsWidget {
    * метода renderItem()
    * */
   update() {
+    if (User.current()) {
+
+    }
 
   }
 
