@@ -43,7 +43,9 @@ class AsyncForm {
     const formData = new FormData(form);
     const entries = [...formData.entries()];
     let result = new Object();
-    entries.forEach((el) => result[el.name] = el.value);
+    entries.forEach((el) => {
+      result[el[0]] = el[1];
+    });
     return result;
   }
 

@@ -5,6 +5,90 @@
       "email": "demo@demo",
       "password": "demo",
       "id": "1"
+    },
+    {
+      "id": "hley6hwkt8yusyb"
+    },
+    {
+      "id": "hley6hce8kt8ztd6a"
+    },
+    {
+      "id": "hley6hg5okt8zx8b8"
+    },
+    {
+      "id": "hley6hcsgkt8zxnev"
+    },
+    {
+      "id": "hley6hhe4kt924wpm"
+    },
+    {
+      "id": "hley6hh9skt929mr6"
+    },
+    {
+      "id": "hley6hatkktdc9eqy"
+    },
+    {
+      "id": "hley6he20ktdccia9"
+    },
+    {
+      "id": "hley6h8kwktdcjma2"
+    },
+    {
+      "id": "hley6hgdoktdck6v8"
+    },
+    {
+      "id": "hley6hcrwktdcnids"
+    },
+    {
+      "id": "hley6h5w0ktdcofwt"
+    },
+    {
+      "id": "hley6h81wktdcp6lg"
+    },
+    {
+      "id": "hley6hj48ktdcq7ix"
+    },
+    {
+      "id": "hley6heh4ktdcqrym"
+    },
+    {
+      "id": "hley6hhbgktdcz63b"
+    },
+    {
+      "id": "hley6hihsktdd2ovb"
+    },
+    {
+      "id": "hley6hen0ktddjzd9"
+    },
+    {
+      "id": "hley6hac8ktddkmlo"
+    },
+    {
+      "id": "hley6hik8ktddl9e4"
+    },
+    {
+      "id": "hley6hb54ktddn6vn"
+    },
+    {
+      "id": "hley6h1q4ktddnks4"
+    },
+    {
+      "id": "hley6h2i0ktddo8nx"
+    },
+    {
+      "id": "hley6hincktddopbp"
+    },
+    {
+      "id": "hley6h354ktddowpj"
+    },
+    {
+      "id": "hley6hdb4ktddqekh"
+    },
+    {
+      "name": "Анна",
+      "email": "k_anna_i@mail.ru",
+      "password": "123",
+      "id": "hley6hagsktddwrn3"
     }
   ],
   "accounts": [
@@ -22,6 +106,86 @@
       "name": "Бизнес",
       "user_id": "1",
       "id": "3"
+    },
+    {
+      "name": "Проценты",
+      "user_id": "hley6hagsktddwrn3",
+      "id": "hley6heq4ktdex7e4"
+    },
+    {
+      "name": "Сбер",
+      "user_id": "hley6hagsktddwrn3",
+      "id": "hley6h7hgktdexp7v"
+    },
+    {
+      "name": "ВТБ",
+      "user_id": "hley6hagsktddwrn3",
+      "id": "hley6hcs0ktdfmq4a"
+    },
+    {
+      "name": "Alpha",
+      "user_id": "hley6hagsktddwrn3",
+      "id": "hley6h6iwktdfndm9"
+    },
+    {
+      "name": "1",
+      "user_id": "hley6hagsktddwrn3",
+      "id": "hley6hby4ktdfoos6"
+    },
+    {
+      "name": "2",
+      "user_id": "hley6hagsktddwrn3",
+      "id": "hley6hj3sktdfqv3h"
+    },
+    {
+      "name": "Сбер1",
+      "user_id": "hley6hagsktddwrn3",
+      "id": "hley6hag0ktfng35q"
+    },
+    {
+      "name": "Сбер2",
+      "user_id": "hley6hagsktddwrn3",
+      "id": "hley6hi18kticfhq1"
+    },
+    {
+      "name": "Сбер3",
+      "user_id": "hley6hagsktddwrn3",
+      "id": "hley6hjcckticrxwq"
+    },
+    {
+      "name": "Сбер5",
+      "user_id": "hley6hagsktddwrn3",
+      "id": "hley6hk7oktj6gmnn"
+    },
+    {
+      "name": "Сбер6",
+      "user_id": "hley6hagsktddwrn3",
+      "id": "hley6h9lkktj6hc6z"
+    },
+    {
+      "name": "Сбер7",
+      "user_id": "hley6hagsktddwrn3",
+      "id": "hley6hc7wktj6qdcv"
+    },
+    {
+      "name": "Сбер8",
+      "user_id": "hley6hagsktddwrn3",
+      "id": "hley6hk8sktkd66hl"
+    },
+    {
+      "name": "Сбер9",
+      "user_id": "hley6hagsktddwrn3",
+      "id": "hley6hcooktkd7wcb"
+    },
+    {
+      "name": "12",
+      "user_id": "hley6hagsktddwrn3",
+      "id": "hley6hg10ktkdbdeg"
+    },
+    {
+      "name": "3",
+      "user_id": "hley6hagsktddwrn3",
+      "id": "hley6hjv8ktlsh0ow"
     }
   ],
   "transactions": [
@@ -159,6 +323,42 @@
       "sum": 300000,
       "type": "expense",
       "user_id": "1"
+    },
+    {
+      "id": "hley6hgp0ktkjpkt7",
+      "type": "income",
+      "name": "Проценты",
+      "sum": 1000,
+      "account_id": "hley6h7hgktdexp7v",
+      "user_id": "hley6hagsktddwrn3",
+      "created_at": "2021-09-14T20:46:39.258Z"
+    },
+    {
+      "id": "hley6hfrsktl5980r",
+      "type": "income",
+      "name": "Проценты",
+      "sum": 100,
+      "account_id": "hley6h7hgktdexp7v",
+      "user_id": "hley6hagsktddwrn3",
+      "created_at": "2021-09-15T06:49:47.738Z"
+    },
+    {
+      "id": "hley6hg50ktlspc8c",
+      "type": "income",
+      "name": "новый",
+      "sum": 200,
+      "account_id": "hley6h7hgktdexp7v",
+      "user_id": "hley6hagsktddwrn3",
+      "created_at": "2021-09-15T17:46:10.859Z"
+    },
+    {
+      "id": "hley6hf8kktlspn54",
+      "type": "expense",
+      "name": "велосипед",
+      "sum": 500,
+      "account_id": "hley6h7hgktdexp7v",
+      "user_id": "hley6hagsktddwrn3",
+      "created_at": "2021-09-15T17:46:24.999Z"
     }
   ]
 }
