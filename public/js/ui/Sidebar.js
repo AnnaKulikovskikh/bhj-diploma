@@ -43,7 +43,7 @@ class Sidebar {
         if (this.classList.contains('menu-item_register')) {
           App.getModal('register').open();
         }if (this.classList.contains('menu-item_logout')) {
-          User.logout(User.current(), (err, response) => {
+          User.logout((err, response) => {
             if (err === null) {
               App.setState( 'init');
             } else {

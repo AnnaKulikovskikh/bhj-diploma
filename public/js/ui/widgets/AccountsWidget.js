@@ -32,16 +32,26 @@
    * вызывает AccountsWidget.onSelectAccount()
    * */
   registerEvents() {
-    const createAccount = this.element.querySelector('.create-account');
-    createAccount.onclick = () => {
-          App.getModal('createAccount').open();
+    this.element.onclick = function(event) {
+      const target = event.target;
+      if (target.classList.contains('create-account')) {
+        App.getModal('createAccount').open();
+      }
+      if (target.classList.contains('account')) {
+        this.onSelectAccount(el);
+      }
     }
-    const accounts = document.querySelectorAll('.account');
 
-    accounts.forEach(el => {el.addEventListener('click', event => {
-      this.onSelectAccount(el);
-    })})
-    }
+    // const createAccount = this.element.querySelector('.create-account');
+    // createAccount.onclick = () => {
+    //   App.getModal('createAccount').open();
+    // }
+    // const accounts = document.querySelectorAll('.account');
+
+    // accounts.forEach(el => {el.addEventListener('click', event => {
+    //   this.onSelectAccount(el);
+    // })})
+  }
 
 
 

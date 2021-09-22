@@ -39,15 +39,14 @@
       method: 'GET',
       responseType: 'json',
       callback: (err, response) => {
+        callback(err, response);
         if (response) {
           this.setCurrent(response);
-          callback(err, response);
         } else {
           this.unsetCurrent();
-          callback(err, response);
         }
       }
-    })
+    });
   }
 
   /**
@@ -96,12 +95,11 @@
    * Производит выход из приложения. После успешного
    * выхода необходимо вызвать метод User.unsetCurrent
    * */
-  static logout( data, callback) {
+  static logout(callback) {
     createRequest({
       url: this.url + '/logout',
       method: 'POST',
       responseType: 'json',
-      data,
       callback: (err, response) => {
         this.unsetCurrent();
         callback(err, response);

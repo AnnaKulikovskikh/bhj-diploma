@@ -15,7 +15,6 @@ class TransactionsPage {
       throw new Error('Element is empty');
     } else {
       this.element = element;
-      console.log(this.element);
       this.registerEvents();
     }
   }
@@ -38,13 +37,18 @@ class TransactionsPage {
    * TransactionsPage.removeAccount соответственно
    * */
   registerEvents() {
-    const removeAccount = this.element.querySelector('.remove-account');
-    removeAccount.onclick = () => {this.removeAccount()};
-    // const tracsactionRemove = this.element.querySelector('.transaction__remove');
-    // tracsactionRemove.onclick = () => {
-    //   const id = tracsactionRemove.getAttribute('data-id');
-    //   this.removeTransaction(id);
-    // };
+    this.element.onclick = function(event) {
+      const target = event.target;
+      if (target.classList.contains('remove-account')) {
+        this.removeAccount();
+      }
+      if (target.classList.contains('transaction__remove')) {
+        const id = tracsactionRemove.getAttribute('data-id');
+        this.removeTransaction(id);
+      } 
+    };
+    //const removeAccount = this.element.querySelector('.remove-account');
+    //removeAccount.onclick = () => {this.removeAccount()};
   }
 
   /**

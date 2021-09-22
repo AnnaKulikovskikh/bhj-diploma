@@ -18,6 +18,8 @@ class CreateTransactionForm extends AsyncForm {
    * */
   renderAccountsList() {
     const accounts = this.element.querySelector('.accounts-select');
+    //if (accounts) accounts.remove();
+    //console.log(Array.from(accounts));
     Array.from(accounts).forEach(el => el.remove());
     Account.list(JSON.stringify(User.current()), (err, response) => {
       if (response) {
