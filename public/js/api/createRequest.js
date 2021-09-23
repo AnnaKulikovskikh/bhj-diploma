@@ -22,7 +22,11 @@
 
     // try {
     //     xhr.open(method, url);
-    //     xhr.send(formData);
+    //     if (method == 'GET') {
+    //         xhr.send(formData);    
+    //     } else {
+    //         xhr.send(formData);
+    //     }  
     // } catch (e) {
     //     options.callback('error');
     // }

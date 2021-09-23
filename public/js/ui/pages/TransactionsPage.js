@@ -39,8 +39,7 @@ class TransactionsPage {
         this.removeAccount();
       }
       if (target.classList.contains('transaction__remove')) {
-        const id = tracsactionRemove.getAttribute('data-id');
-        this.removeTransaction(id);
+        this.removeTransaction(target.getAttribute('data-id'));
       } 
     };
     //const removeAccount = this.element.querySelector('.remove-account');
@@ -58,14 +57,14 @@ class TransactionsPage {
    * */
   removeAccount() {
     if (this.lastOptions) {
-      alert(confirm('Вы действительно хотите удалить счёт?'));
-      const id = ['?id',this.lastOptions.account_id];
-      Account.remove(id, (err, response) => {
-        if (err === null) {
-          App.updateWidgets();
-        }
-      })
-      this.clear();
+      if (confirm('Вы действительно хотите удалить счёт?')) {
+        Account.remove({id: this.lastOptions.account_id}, (err, response) => {
+          if (err === null) {
+            App.updateWidgets();
+          }
+        })
+        this.clear();
+      }
     }
   }
 
@@ -76,13 +75,13 @@ class TransactionsPage {
    * либо обновляйте текущую страницу (метод update) и виджет со счетами
    * */
   removeTransaction( id ) {
-    alert(confirm('Вы действительно хотите удалить эту транзакцию?'));
-    id = ["?id=", id];
-    Transaction.remove(id, (err, response) => {
-      if (err === null) {
-      App.update();
-      }
-    })
+    if (confirm('Вы действительно хотите удалить эту транзакцию?')) {
+      Transaction.remove({id: id}, (err, response) => {
+        if (err === null) {
+        App.update();
+        }
+      });
+    }
   }
 
   /**
@@ -99,8 +98,7 @@ class TransactionsPage {
           this.renderTitle(response.data.name)
         }
       })
-      const list_account = ['?account_id=', options.account_id];
-      Transaction.list(list_account, (err, response) => {
+      Transaction.list({account_id: options.account_id}, (err, response) => {
         if (err === null) {
           this.renderTransactions(response.data);
         }

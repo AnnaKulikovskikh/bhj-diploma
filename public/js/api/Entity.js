@@ -37,7 +37,8 @@ class Entity {
    * */
   static remove(data, callback ) {
     createRequest( {
-      url: this.url + data,
+      url: this.url,
+      data,
       method: 'DELETE',
       callback,
     });
