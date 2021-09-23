@@ -32,13 +32,13 @@
    * вызывает AccountsWidget.onSelectAccount()
    * */
   registerEvents() {
-    this.element.onclick = function(event) {
+    this.element.onclick = (event) => {
       const target = event.target;
       if (target.classList.contains('create-account')) {
         App.getModal('createAccount').open();
       }
-      if (target.classList.contains('account')) {
-        this.onSelectAccount(el);
+      if (target.closest('.account')) {
+        this.onSelectAccount(target.closest('.account'));
       }
     }
 
@@ -52,8 +52,6 @@
     //   this.onSelectAccount(el);
     // })})
   }
-
-
 
   /**
    * Метод доступен только авторизованным пользователям
@@ -96,13 +94,11 @@
    * Вызывает App.showPage( 'transactions', { account_id: id_счёта });
    * */
   onSelectAccount(element){
+    const activeElem = this.element.querySelector('.active');
+    if (activeElem) {
+      activeElem.classList.remove('active');
+    }
     element.classList.add('active');
-    const activeElems = this.element.querySelectorAll('.active')
-    activeElems.forEach(el => {
-      if (el !== element) {
-        el.classList.remove('active')
-      }
-    })
     const account_id = element.getAttribute('data-id');
     App.showPage('transactions', {'account_id': account_id});
   }

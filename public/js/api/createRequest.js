@@ -7,22 +7,21 @@
     const method = options.method; 
     const xhr = new XMLHttpRequest();
     xhr.responseType = 'json';
+    let url = options.url;
 
     // if (method == 'GET') {
-    //     xhr.open(method,`${options.url}?email=${options.data.email}&password=${options.data.password}`);
-    //     const datum = options.url;
     //     for (key in options.data) {
-    //         datum += `?${key}=${options.data[key]}`;
+    //         url += `?${key}=${options.data[key]}`;
     //     }
     // } else {
-    //     const formData = new FormData();
+    //     let formData = new FormData();
     //     for (key in options.data) {
     //         formData.append(key, options.data[key]);
     //     }
     // }
 
     // try {
-    //     xhr.open(method, options.url);
+    //     xhr.open(method, url);
     //     xhr.send(formData);
     // } catch (e) {
     //     options.callback('error');
@@ -30,19 +29,17 @@
 
     try {
         if (method == 'GET') {
-            xhr.open(method,`${options.url}?email=${options.data.email}&password=${options.data.password}`);
-            // const datum = options.url;
-            // for (key in options.data) {
-            //     datum += `?${key}=${options.data[key]}`;
-            // }
-            xhr.open(method, options.url);
+            for (key in options.data) {
+                url += `?${key}=${options.data[key]}`;
+            }
+            xhr.open(method, url);
             xhr.send();
         } else {
-            const formData = new FormData();
+            let formData = new FormData();
             for (key in options.data) {
                 formData.append(key, options.data[key]);
             }
-            xhr.open(method, options.url);
+            xhr.open(method, url);
             xhr.send(formData);
         }
     } catch (e) {

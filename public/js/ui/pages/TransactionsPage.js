@@ -23,11 +23,7 @@ class TransactionsPage {
    * Вызывает метод render для отрисовки страницы
    * */
   update() {
-    if (this.lastOptions){
-      this.render(this.lastOptions)
-    } else {
-      this.render()
-    }
+    this.render(this.lastOptions);
   }
 
   /**
@@ -37,7 +33,7 @@ class TransactionsPage {
    * TransactionsPage.removeAccount соответственно
    * */
   registerEvents() {
-    this.element.onclick = function(event) {
+    this.element.onclick = (event) => {
       const target = event.target;
       if (target.classList.contains('remove-account')) {
         this.removeAccount();
@@ -63,7 +59,7 @@ class TransactionsPage {
   removeAccount() {
     if (this.lastOptions) {
       alert(confirm('Вы действительно хотите удалить счёт?'));
-      const id = "?id=" + this.lastOptions.account_id;
+      const id = ['?id',this.lastOptions.account_id];
       Account.remove(id, (err, response) => {
         if (err === null) {
           App.updateWidgets();
@@ -81,7 +77,7 @@ class TransactionsPage {
    * */
   removeTransaction( id ) {
     alert(confirm('Вы действительно хотите удалить эту транзакцию?'));
-    id = "?id=" + id
+    id = ["?id=", id];
     Transaction.remove(id, (err, response) => {
       if (err === null) {
       App.update();
@@ -103,7 +99,7 @@ class TransactionsPage {
           this.renderTitle(response.data.name)
         }
       })
-      const list_account = '?account_id=' + options.account_id;
+      const list_account = ['?account_id=', options.account_id];
       Transaction.list(list_account, (err, response) => {
         if (err === null) {
           this.renderTransactions(response.data);
