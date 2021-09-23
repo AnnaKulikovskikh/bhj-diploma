@@ -23,7 +23,7 @@
     // try {
     //     xhr.open(method, url);
     //     if (method == 'GET') {
-    //         xhr.send(formData);    
+    //         xhr.send();    
     //     } else {
     //         xhr.send(formData);
     //     }  
